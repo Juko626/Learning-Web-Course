@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .colorRed {
+        color: red;
+      }
+      .colorBlue {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <h1 v-bind:class ="color">HI</h1>
+      <button v-on:click="bbq">컬러바꾸기</button>
+    </div>
+
+    <!--// vue.js 2.7.10 링크:
+    //https://www.jsdelivr.com/package/npm/vue?version=2.7.10-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.min.js"></script>
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data() {
+          return {
+            color:"colorBlue",
+            nextcolor:"colorRed",
+          };
+        },
+        methods: {
+          bbq() {
+            this.color = this.nextcolor;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
